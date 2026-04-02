@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MichASMR - TikTok Live Comments</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+  min-height: 100vh;
+  padding: 24px 16px;
+}
+h1 {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 8px;
+  background: linear-gradient(90deg, #25F4EE, #FE2C55);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.subtitle {
+  text-align: center;
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 28px;
+}
+.section {
+  max-width: 600px;
+  margin: 0 auto 24px;
+}
+.section-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #FE2C55;
+  margin-bottom: 10px;
+  padding-left: 4px;
+}
+.card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.card:hover { background: #222; border-color: #444; }
+.card:active { transform: scale(0.98); }
+.card.copied {
+  border-color: #25F4EE;
+  background: #0d2a2a;
+}
+.card-text {
+  font-size: 16px;
+  line-height: 1.4;
+  flex: 1;
+}
+.card-icon {
+  font-size: 18px;
+  color: #666;
+  flex-shrink: 0;
+  width: 28px;
+  text-align: center;
+  transition: color 0.15s;
+}
+.card.copied .card-icon { color: #25F4EE; }
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: #25F4EE;
+  color: #000;
+  padding: 10px 24px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.25s ease;
+  pointer-events: none;
+  z-index: 100;
+}
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<h1>MichASMR - Live Comments</h1>
+<p class="subtitle">Clicca per copiare, incolla in chat</p>
+
+<div class="section">
+  <div class="section-title">Segui MichASMR su TikTok</div>
+  <div class="card" onclick="copyText(this)">
+    <span class="card-text">Metti il follow ora a MichASMR su TikTok 💖</span>
+    <span class="card-icon">📋</span>
+  </div>
+  <div class="card" onclick="copyText(this)">
+    <span class="card-text">Segui adesso MichASMR su TikTok!</span>
+    <span class="card-icon">📋</span>
+  </div>
+  <div class="card" onclick="copyText(this)">
+    <span class="card-text">Segui MichASMR su TikTok!</span>
+    <span class="card-icon">📋</span>
+  </div>
+  <div class="card" onclick="copyText(this)">
+    <span class="card-text">Ragazzi seguite MichASMR su TikTok!</span>
+    <span class="card-icon">📋</span>
+  </div>
+  <div class="card" onclick="copyText(this)">
+    <span class="card-text">Se ti piace, segui MichASMR su TikTok</span>
+    <span class="card-icon">📋</span>
+  </div>
+  <div class="card" onclick="copyText(this)">
+    <span class="card-text">Sei nuovo? Segui MichASMR per le prossime live</span>
+    <span class="card-icon">📋</span>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Engagement</div>
+  <div class="card" onclick="copyText(this)">
+    <span class="card-text">Forza ragazzi tap tap tap!</span>
+    <span class="card-icon">📋</span>
+  </div>
+  <div class="card" onclick="copyText(this)">
+    <span class="card-text">Tap tap tap ragazzi!</span>
+    <span class="card-icon">📋</span>
+  </div>
+  <div class="card" onclick="copyText(this)">
+    <span class="card-text">Da dove ci guardi?</span>
+    <span class="card-icon">📋</span>
+  </div>
+  <div class="card" onclick="copyText(this)">
+    <span class="card-text">Ti sta rilassando? Scrivi SI nei commenti</span>
+    <span class="card-icon">📋</span>
+  </div>
+  <div class="card" onclick="copyText(this)">
+    <span class="card-text">Qual e' il tuo trigger preferito? Scrivilo!</span>
+    <span class="card-icon">📋</span>
+  </div>
+  <div class="card" onclick="copyText(this)">
+    <span class="card-text">Condividi la live con qualcuno che non riesce a dormire</span>
+    <span class="card-icon">📋</span>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">YouTube - MichASMR29</div>
+  <div class="card" onclick="copyText(this)">
+    <span class="card-text">Canale YouTube: MichASMR29</span>
+    <span class="card-icon">📋</span>
+  </div>
+  <div class="card" onclick="copyText(this)">
+    <span class="card-text">Cerca MichASMR29 su YouTube!</span>
+    <span class="card-icon">📋</span>
+  </div>
+  <div class="card" onclick="copyText(this)">
+    <span class="card-text">Video completi su YouTube, cerca MichASMR29</span>
+    <span class="card-icon">📋</span>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Instagram - MichASMR</div>
+  <div class="card" onclick="copyText(this)">
+    <span class="card-text">Instagram: MichASMR</span>
+    <span class="card-icon">📋</span>
+  </div>
+  <div class="card" onclick="copyText(this)">
+    <span class="card-text">Segui MichASMR anche su Instagram!</span>
+    <span class="card-icon">📋</span>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Bonus - Moderazione</div>
+  <div class="card" onclick="copyText(this)">
+    <span class="card-text">Benvenuti a tutti!</span>
+    <span class="card-icon">📋</span>
+  </div>
+  <div class="card" onclick="copyText(this)">
+    <span class="card-text">Luci basse e volume su</span>
+    <span class="card-icon">📋</span>
+  </div>
+  <div class="card" onclick="copyText(this)">
+    <span class="card-text">Attiva la campanella per sapere quando siamo live</span>
+    <span class="card-icon">📋</span>
+  </div>
+  <div class="card" onclick="copyText(this)">
+    <span class="card-text">Grazie a tutti per essere qui stasera!</span>
+    <span class="card-icon">📋</span>
+  </div>
+</div>
+
+<div class="toast" id="toast">Copiato!</div>
+
+<script>
+function showToast(msg) {
+  var toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(function() { toast.classList.remove('show'); }, 1500);
+}
+function copyText(card) {
+  var text = card.querySelector('.card-text').textContent;
+  copyToClipboard(text).then(function() {
+    card.classList.add('copied');
+    card.querySelector('.card-icon').textContent = '✓';
+    showToast('Copiato!');
+    setTimeout(function() {
+      card.classList.remove('copied');
+      card.querySelector('.card-icon').textContent = '📋';
+    }, 2000);
+  }).catch(function() {
+    // Fallback finale: seleziona il testo per copia manuale
+    var range = document.createRange();
+    range.selectNodeContents(card.querySelector('.card-text'));
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    showToast('Tieni premuto per copiare');
+  });
+}
+function copyToClipboard(text) {
+  // 1. Prova clipboard API
+  if (navigator.clipboard && window.isSecureContext) {
+    return navigator.clipboard.writeText(text).catch(function() {
+      return fallbackCopy(text);
+    });
+  }
+  return fallbackCopy(text);
+}
+function fallbackCopy(text) {
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  ta.setAttribute('readonly', '');
+  ta.style.position = 'fixed';
+  ta.style.top = '0';
+  ta.style.left = '0';
+  ta.style.width = '1px';
+  ta.style.height = '1px';
+  ta.style.padding = '0';
+  ta.style.border = 'none';
+  ta.style.outline = 'none';
+  ta.style.boxShadow = 'none';
+  ta.style.background = 'transparent';
+  ta.style.opacity = '0';
+  ta.style.fontSize = '16px'; // evita zoom iOS
+  document.body.appendChild(ta);
+  if (navigator.userAgent.match(/ipad|iphone/i)) {
+    var range = document.createRange();
+    range.selectNodeContents(ta);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    ta.setSelectionRange(0, text.length);
+  } else {
+    ta.select();
+  }
+  var ok = document.execCommand('copy');
+  document.body.removeChild(ta);
+  return ok ? Promise.resolve() : Promise.reject();
+}
+</script>
+
+</body>
+</html>
